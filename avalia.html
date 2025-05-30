@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avaliações - Especiarias da Roça</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <section>
+            <a href="index.html" class="logo">
+                <img src="./icons8-cenoura-50.png" alt="logo">
+            </a>
+
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="feiras.html">Feiras</a>
+                <a href="log.html">Login</a>
+            </nav>
+        </section>
+    </header>
+
+    <main class="avaliacoes-container">
+        <h2 class="title">Avaliações dos <span>Clientes</span></h2>
+
+        <div class="avaliacao-card">
+            <div class="avaliacao-header">
+                <h3>Maria Silva</h3>
+                <div class="estrelas">★★★★★</div>
+            </div>
+            <p>"As hortaliças da Dona Lurdes são as melhores da região! Frescas e cheirosas, parece que acabaram de ser
+                colhidas."</p>
+        </div>
+
+        <div class="avaliacao-card">
+            <div class="avaliacao-header">
+                <h3>João Oliveira</h3>
+                <div class="estrelas">★★★★☆</div>
+            </div>
+            <p>"Compro o pinhão todo ano e nunca me decepciona. A bolsa de crochê que comprei pra minha esposa também é
+                linda!"</p>
+        </div>
+
+        <div class="avaliacao-card">
+            <div class="avaliacao-header">
+                <h3>Ana Costa</h3>
+                <div class="estrelas">★★★★★</div>
+            </div>
+            <p>"Produtos de qualidade excepcional e atendimento personalizado. Recomendo a todos que valorizam o
+                trabalho artesanal."</p>
+        </div>
+
+        <div class="avaliacao-card">
+            <div class="avaliacao-header">
+                <h3>Lucas Pereira</h3>
+                <div class="estrelas">★★★★★</div>
+            </div>
+            <p>"O doce de leite artesanal é maravilhoso! Levei para minha família e todos amaram."</p>
+        </div>
+
+        <div class="avaliacao-card">
+            <div class="avaliacao-header">
+                <h3>Fernanda Rocha</h3>
+                <div class="estrelas">★★★★☆</div>
+            </div>
+            <p>"As compotas são deliciosas, só achei o preço um pouquinho alto."</p>
+        </div>
+
+        <div class="avaliacao-card">
+            <div class="avaliacao-header">
+                <h3>Tiago Lima</h3>
+                <div class="estrelas">★★★★★</div>
+            </div>
+            <p>"Ótimo atendimento e entrega rápida. Comprei online e chegou tudo certinho."</p>
+        </div>
+
+        <!-- Botão para ir à página de deixar avaliação -->
+        <button id="btnAvaliar">Deixar Avaliação</button>
+    </main>
+
+    <script>
+        const btnAvaliar = document.getElementById('btnAvaliar');
+
+        btnAvaliar.addEventListener('click', function () {
+            const loggedInUser = localStorage.getItem('loggedInUser');
+
+            if (loggedInUser) {
+                window.location.href = 'deixe-avaliacao.html';
+            } else {
+                alert('Você precisa estar logado para deixar uma avaliação.');
+                window.location.href = 'log.html';
+            }
+        });
+    </script>
+</body>
+
+</html>

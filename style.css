@@ -1,0 +1,544 @@
+:root {
+    --main-color: #0e515e;
+    --water: #d95f4a;
+    --bg: #e4c44c;
+    --body: #e5d8c0e7;
+    --quadro: #f4f1e1;
+    --border: 0.1rem solid rgba(28, 199, 182, 0.856);
+    font-size: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-family: "League Spartan", sans-serif;
+}
+
+body {
+    background-color: var(--body);
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
+    background-color: var(--main-color);
+    border-bottom: var(--border);
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+}
+
+.navbar a {
+    margin: 0 1rem;
+    font-size: 1.8rem;
+    color: var(--quadro);
+}
+
+.navbar a:hover {
+    color: var(--bg);
+    border-bottom: 0.2rem solid var(--water);
+}
+
+
+
+.icons img:hover {
+    width: 35px;
+    height: 35px;
+}
+
+.bnt {
+    background: var(--main-color);
+    color: var(--bg);
+    padding: 1.5rem 3rem;
+    font-size: 1.8rem;
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+/* Banner com texto centralizado */
+.banner {
+    position: relative;
+    margin-top: 7rem;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.8);
+}
+
+.texto-banner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    text-align: center;
+}
+
+.texto-banner h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 4px var(--quadro);
+}
+
+.sobre-container {
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+.imagem-sobre {
+    text-align: center;
+}
+
+.imagem-sobre img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #0000002f;
+}
+
+.quadro-sobre {
+    background-color: var(--quadro);
+    padding: 3rem;
+    max-width: 800px;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px #0000001f;
+}
+
+.title {
+    font-size: 4.5rem;
+    color: var(--water);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.title span {
+    color: black;
+}
+
+.quadro-sobre p {
+    font-size: 1.8rem;
+    color: #333;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+ 
+.catalogo-container {
+    padding: 5rem 2rem;
+    background-color: var(--body);
+    text-align: center;
+}
+
+/* --- INÍCIO DA PARTE MODIFICADA --- */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-image {
+    height: 220px;
+    background-color: #f5f5f5;
+    background-size: cover;
+    background-position: center;
+}
+
+.product-info {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-name {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.product-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #8B4513;
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.buy-btn {
+    background: #8B4513;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    margin-top: auto; /* Alinhamento correto do botão */
+}
+/* --- FIM DA PARTE MODIFICADA --- */
+
+/* Estilos dos Modais */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: var(--quadro);
+    margin: 10% auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.close {
+    float: right;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.modal h2 {
+    color: var(--main-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.modal input {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+}
+
+.modal p {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.modal a {
+    color: var(--water);
+    text-decoration: underline;
+}
+
+/* Banner Promocional */
+.promo-banner {
+    background-color: var(--water); /* Cor laranja do seu tema */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.6rem;
+    position: relative;
+    display: none; /* Inicia oculto */
+}
+
+.promo-banner .cupom {
+    background-color: white;
+    color: var(--water);
+    padding: 0.3rem 0.6rem;
+    border-radius: 0.4rem;
+    font-weight: bold;
+}
+
+#fechar-promo {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.cupom-container {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+#input-cupom {
+    padding: 1rem;
+    border: 1px solid var(--main-color);
+    border-radius: 0.5rem;
+    flex-grow: 1;
+}
+
+.cart-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1000;
+    animation: fadeInOut 2s ease-in-out;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-20px); }
+    20% { opacity: 1; transform: translateY(0); }
+    80% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+}
+
+.carrinho-contador {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff0000;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.carrinho-icon {
+    position: relative;
+    display: inline-block;
+}
+
+/* Geral */
+body {
+    margin: 0;
+    font-family: 'League Spartan', sans-serif;
+    background-color: #f4e9d8;
+}
+
+main.avaliacoes-container {
+    max-width: 900px;
+    margin: 6rem auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+h2.title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #0b4c5f;
+}
+
+h2.title span {
+    color: #f4a261;
+}
+
+/* Header */
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #004c51;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.header section {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #f4a261;
+}
+
+/* Avaliação */
+.avaliacao-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.avaliacao-card:hover {
+    transform: translateY(-2px);
+}
+
+.avaliacao-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.estrelas {
+    color: orange;
+}
+
+.add-review-btn {
+    align-self: center;
+    background-color: #004c51;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-review-btn:hover {
+    background-color: #00797c;
+}
+
+/* Espaço pro título não ficar atrás do header */
+main.avaliacoes-container {
+    max-width: 900px;
+    margin: 6rem auto;
+    padding: 6rem 2rem 2rem 2rem; /* aumentei o topo pra compensar o header fixo */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Título mais visível */
+h2.title {
+    text-align: center;
+    font-size: 3rem; /* aumentei */
+    color: #0b4c5f;
+    margin-bottom: 2rem;
+}
+
+/* Cartão da avaliação */
+.avaliacao-card {
+    font-size: .0rem; /* aumenta o texto */
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.2rem 1.8rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Nome do cliente */
+.avaliacao-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+
+/* Avaliação */
+.avaliacao-card {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.avaliacao-card:hover {
+    transform: translateY(-2px);
+}
+
+.avaliacao-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.estrelas {
+    color: orange;
+}
+
+.add-review-btn {
+    align-self: center;
+    background-color: #004c51;
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-review-btn:hover {
+    background-color: #00797c;
+}
+
+.avaliacao-card p {
+    font-size: 1.6rem;      /* texto maior */
+    line-height: 1.6;
+    color: #555;
+    margin: 0 0 15px 0;
+    font-style: italic;
+}
+
+.estrelas {
+    font-size: 1.4rem;
+    color: #f2b01e;
+    letter-spacing: 2px;
+}
+

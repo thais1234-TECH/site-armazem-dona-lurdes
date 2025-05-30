@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Carrinho - Especiarias da Roça</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <style>
+        body {
+            font-family: 'League Spartan', sans-serif;
+            padding: 20px;
+            background: #e5d8c0e7;
+        }
+
+        h1 {
+            color: #0e515e;
+        }
+
+        nav {
+            background-color: #0e515e;
+            padding: 15px 20px;
+            color: white;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            margin-right: 20px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        #carrinho-lista {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 600px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(44, 106, 0, 0.15);
+        }
+
+        .item-carrinho {
+            border-bottom: 1px solid #c3d4a9;
+            padding: 12px 0;
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            color: #3a4d11;
+            align-items: center;
+        }
+
+        .item-carrinho:last-child {
+            border-bottom: none;
+        }
+
+        .btn-remover {
+            background-color: #d9534f;
+            border: none;
+            color: white;
+            padding: 6px 12px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-remover:hover {
+            background-color: #c9302c;
+        }
+
+        .total {
+            font-weight: 700;
+            font-size: 22px;
+            margin-top: 15px;
+            text-align: right;
+            color: #0e515e;
+        }
+
+        button {
+            background-color: #0e515e;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #084149;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #1da851;
+        }
+
+        #info-multa,
+        #info-entrega {
+            margin-top: 30px;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        #info-multa {
+            color: #d9534f;
+        }
+
+        #info-entrega {
+            color: #5cb85c;
+            display: none;
+        }
+
+        #mensagem-sucesso {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        #area-final {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        #form-entrega {
+            font-size: 2.rem;
+            font-weight: 600;
+            font-family: 'League Spartan', sans-serif;
+            text-align: center;
+        }
+
+        #info-multa {
+            font-size: 1.5rem;
+            color: #d9534f;
+            text-align: center;
+            max-width: 600px;
+        }
+
+        #botoes-finais {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        #botoes-finais button {
+            min-width: 220px;
+            
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="carrinho.html" style="font-weight: bold; text-decoration: underline;">Carrinho</a>
+    </nav>
+
+    <h1>Seu Carrinho</h1>
+
+    <div id="carrinho-lista"></div>
+
+    <div id="">
+        <p><strong>Escolha a forma de receber seu pedido:</strong></p>
+        <label>
+            <input type="radio" name="entrega" value="feira" checked /> Retirar na feira (com comprovante - sujeito a
+            multa de R$ 5,00 se não retirar)
+        </label><br />
+        <label>
+            <input type="radio" name="entrega" value="especial" /> Entrega especial (taxa adicional R$ 10,00)
+        </label>
+
+        <div id="info-multa">
+            Atenção: Caso não retire na feira, será cobrada multa via Pix de <strong>R$ 5,00</strong>.<br />
+            Pix para multa: <strong>123.456.789-00</strong>
+        </div>
+
+        <div id="info-entrega">
+            Taxa para entrega especial: <strong>R$ 10,00</strong>.
+        </div>
+    </div>
+
+    <div class="total" id="total"></div>
+
+    <div>
+        <button id="btnFinalizar">Gerar Comprovante PDF (Pix)</button>
+        <button class="btn-whatsapp" onclick="enviarWhatsApp()">Enviar pedido pelo WhatsApp</button>
+        <button onclick="finalizarCompra()">Finalizar</button>
+    </div>
+
+    <div id="mensagem-sucesso">Compra feita com sucesso!</div>
+
+    
+
+    <script>
+        const multaValor = 5.00;
+        const taxaEntregaEspecial = 10.00;
+
+        function mostrarCarrinho() {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            const container = document.getElementById('carrinho-lista');
+            container.innerHTML = '';
+
+            if (carrinho.length === 0) {
+                container.innerHTML = '<p>Seu carrinho está vazio.</p>';
+                document.getElementById('total').innerText = '';
+                return;
+            }
+
+            carrinho.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = 'item-carrinho';
+
+                div.innerHTML = `
+                    <span>${item.nome}</span>
+                    <div>
+                        <span>R$ ${item.preco.toFixed(2)}</span>
+                        <button class="btn-remover" onclick="removerItem(${index})">Remover</button>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+
+            calcularTotal();
+        }
+
+        function removerItem(index) {
+            let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            carrinho.splice(index, 1);
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+            mostrarCarrinho();
+        }
+
+        function calcularTotal() {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            let totalProdutos = carrinho.reduce((acc, item) => acc + item.preco, 0);
+
+            const opcaoEntrega = document.querySelector('input[name="entrega"]:checked').value;
+            const infoMulta = document.getElementById('info-multa');
+            const infoEntrega = document.getElementById('info-entrega');
+
+            let totalFinal = totalProdutos;
+
+            if (opcaoEntrega === 'feira') {
+                infoMulta.style.display = 'block';
+                infoEntrega.style.display = 'none';
+            } else {
+                totalFinal += taxaEntregaEspecial;
+                infoMulta.style.display = 'none';
+                infoEntrega.style.display = 'block';
+            }
+
+            document.getElementById('total').innerText = `Total: R$ ${totalFinal.toFixed(2)}`;
+        }
+
+        document.querySelectorAll('input[name="entrega"]').forEach(radio => {
+            radio.addEventListener('change', calcularTotal);
+        });
+
+        function finalizarCompra() {
+            localStorage.removeItem('carrinho');
+            mostrarCarrinho();
+            document.getElementById('mensagem-sucesso').style.display = 'block';
+            setTimeout(() => {
+                document.getElementById('mensagem-sucesso').style.display = 'none';
+            }, 4000);
+        }
+
+        async function gerarComprovantePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+
+            if (carrinho.length === 0) {
+                alert('Seu carrinho está vazio.');
+                return;
+            }
+
+            let y = 10;
+            doc.setFontSize(18);
+            doc.text('Comprovante de Compra - Especiarias da Roça', 10, y);
+            y += 15;
+            doc.setFontSize(14);
+
+            carrinho.forEach(item => {
+                doc.text(`${item.nome} - R$ ${item.preco.toFixed(2)}`, 10, y);
+                y += 10;
+            });
+
+            const opcaoEntrega = document.querySelector('input[name="entrega"]:checked').value;
+            let taxaExtra = opcaoEntrega === 'especial' ? taxaEntregaEspecial : 0;
+            let totalFinal = carrinho.reduce((acc, item) => acc + item.preco, 0) + taxaExtra;
+
+            y += 10;
+            doc.text(`Taxa extra: R$ ${taxaExtra.toFixed(2)}`, 10, y);
+            y += 10;
+            doc.text(`Total: R$ ${totalFinal.toFixed(2)}`, 10, y);
+            y += 15;
+
+            const pixKey = 'seu-pix-chave-aqui';
+            const pixPayload = `00020126360014BR.GOV.BCB.PIX0114${pixKey}520400005303986540${totalFinal.toFixed(2)}5802BR5925Especiarias da Roca6009Sao Paulo62070503***6304`;
+
+            const canvas = document.createElement('canvas');
+            await QRCode.toCanvas(canvas, pixPayload, { width: 150 });
+            const imgData = canvas.toDataURL('image/png');
+            doc.addImage(imgData, 'PNG', 10, y, 50, 50);
+            doc.save('comprovante.pdf');
+        }
+
+        document.getElementById('btnFinalizar').addEventListener('click', gerarComprovantePDF);
+
+        function enviarWhatsApp() {
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            if (carrinho.length === 0) {
+                alert('Seu carrinho está vazio.');
+                return;
+            }
+
+            let mensagem = 'Olá, gostaria de fazer o pedido:\n\n';
+            carrinho.forEach(item => {
+                mensagem += `- ${item.nome}: R$ ${item.preco.toFixed(2)}\n`;
+            });
+
+            const opcaoEntrega = document.querySelector('input[name="entrega"]:checked').value;
+            const taxaExtra = opcaoEntrega === 'especial' ? taxaEntregaEspecial : 0;
+            mensagem += opcaoEntrega === 'especial'
+                ? `\nForma de recebimento: Entrega especial (taxa R$ ${taxaExtra.toFixed(2)})`
+                : `\nForma de recebimento: Retirar na feira (multa de R$ 5,00 se não retirar)`;
+
+            const totalFinal = carrinho.reduce((acc, item) => acc + item.preco, 0) + taxaExtra;
+            mensagem += `\nTotal: R$ ${totalFinal.toFixed(2)}`;
+
+            const telefone = '5511999999999';
+            const url = `https://wa.me/${telefone}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        }
+
+        mostrarCarrinho();
+    </script>
+</body>
+
+</html>

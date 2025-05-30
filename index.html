@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+    <title>Especiarias da Roça</title>
+</head>
+
+<body>
+    <header class="header">
+        <section>
+            <a href="#" class="logo">
+                <img src="./icons8-cenoura-50.png" alt="logo">
+            </a>
+
+            <nav class="navbar">
+
+                <a href="avalia.html">Avaliações</a>
+                <a href="feiras.html">Feiras</a>
+                <a href="log.html">Login</a>
+                <a href="carrinho.html" class="btn-carrinho">🛒 Carrinho</a>
+            </nav>
+
+
+    </header>
+
+    <main>
+        <section class="banner">
+            <img src="/ChatGPT Image 5 de mai. de 2025, 22_49_18.png" alt="Banner com logo e slogan" class="banner-img">
+            <div class="texto-banner">
+                <h1>Com Amor, Da Roça<br>Para Você.</h1>
+            </div>
+        </section>
+
+        <section class="sobre-container">
+            </div>
+
+            <div class="quadro-sobre">
+                <h2 class="title">Sobre <span>Nós</span></h2>
+                <p>
+                    Dona Lurdes cultiva mais que sabores — ela planta amor, colhe tradição e entrega qualidade em cada
+                    detalhe.
+                    Há mais de 30 anos, ela dedica suas mãos e seu coração ao cultivo de hortaliças, receitas caseiras e
+                    artesanatos
+                    que carregam o verdadeiro sabor da roça.
+                </p>
+                <p>
+                    Seu trabalho vai muito além de plantar e colher. Dona Lurdes preserva receitas antigas, respeita o
+                    tempo da natureza e acredita que a comida feita com carinho pode transformar dias comuns em momentos
+                    especiais.
+                </p>
+            </div>
+        </section>
+
+        <div>
+            <h2 class="title">Catálogo</h2>
+        </div>
+
+    
+
+        <div class="products-grid">
+            
+            <div class="product-card">
+            
+                <div class="product-image" style="background-image: url(/alface..jpg);"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Alface Orgânica-Unid</h3>
+                    <p class="product-description">Colhida Direto Da Horta</p>
+                    <p class="product-price">R$ 3,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Batata Doce', 6.00)">Comprar</button>
+
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(/pinhao.jpg);"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Pinhão</h3>
+                    <p class="product-description">Venda Por Kg.</p>
+                    <p class="product-price">R$ 10,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Pinhão', 10.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(poncã.jpg);"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Poncã</h3>
+                    <p class="product-description">Venda Por Kg.</p>
+                    <p class="product-price">R$ 8,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Poncã', 8.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(Bolsa.nautico.jpg);"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Bolsa Naútico</h3>
+                    <p class="product-description">Bolsa de Crochê</p>
+                    <p class="product-price">R$ 200,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Bolsa Naútico', 200.00)">Comprar</button>
+                </div>
+            </div>
+
+           
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(geleia.morango.jpg);"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Geleia De Morango</h3>
+                    <p class="product-description">Feito Artesanal, Sem Corantes Ou Conservantes.</p>
+                    <p class="product-price">R$ 15,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Geleia De Morango', 15.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(pão.caseiro.jpg);"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Pão Caseiro</h3>
+                    <p class="product-description">Fermentação Natural, 1.00kg.</p>
+                    <p class="product-price">R$ 12,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Pão Caseiro', 12.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(queijo.meia.cura.jpg);"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Queijo Colonial</h3>
+                    <p class="product-description">Feito artesanalmente, 500g.</p>
+                    <p class="product-price">R$ 28,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Queijo Colonial', 28.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(Ovo\ Caipira.jpg);"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Ovos Caipira</h3>
+                    <p class="product-description">Dúzia de ovos frescos de galinhas caipiras.</p>
+                    <p class="product-price">R$ 12,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Ovos Caipira', 12.00)">Comprar</button>
+                </div>
+            </div>
+
+            <!-- Fileira 3 (continue adicionando fileiras conforme necessário) -->
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(vela.de.rosas.jpg);"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Vela Arómatica</h3>
+                    <p class="product-description">Feita com flores frescas.</p>
+                    <p class="product-price">R$ 45,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Vela Arómatica', 45.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(Abóbora.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Abóbora</h3>
+                    <p class="product-description">Abóbora fresca da horta, unidade.</p>
+                    <p class="product-price">R$ 8,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Abóbora', 8.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(ACELGA.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Acelga</h3>
+                    <p class="product-description">Acelga orgânica, maço.</p>
+                    <p class="product-price">R$ 4,50</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Acelga', 4.50)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(Agrião.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Agrião</h3>
+                    <p class="product-description">Agrião fresco, maço.</p>
+                    <p class="product-price">R$ 3,50</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Agrião', 3.50)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(almeirão.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Almeirão</h3>
+                    <p class="product-description">Almeirão orgânico, maço.</p>
+                    <p class="product-price">R$ 4,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Almeirão', 4.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(Avental\ bordado.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Avental Bordado</h3>
+                    <p class="product-description">Avental artesanal bordado à mão.</p>
+                    <p class="product-price">R$ 45,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Avental Bordado', 45.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(batata\ doce.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Batata Doce</h3>
+                    <p class="product-description">Batata doce orgânica, kg.</p>
+                    <p class="product-price">R$ 6,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Batata Doce', 6.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(beterraba.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Beterraba</h3>
+                    <p class="product-description">Beterraba fresca, maço.</p>
+                    <p class="product-price">R$ 5,50</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Beterraba', 5.50)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(bolacha.luedes.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Bolacha Caseira</h3>
+                    <p class="product-description">Bolacha artesanal sabor luedes, pacote.</p>
+                    <p class="product-price">R$ 12,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Bolacha Caseira', 12.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(Bolsa.de.feira.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Bolsa de Feira</h3>
+                    <p class="product-description">Bolsa ecológica para feira, unidade.</p>
+                    <p class="product-price">R$ 35,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Bolsa de Feira', 35.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(bolsa.margarida.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Bolsa Margarida</h3>
+                    <p class="product-description">Bolsa artesanal com estampa de margaridas.</p>
+                    <p class="product-price">R$ 40,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Bolsa Margarida', 40.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(brocolis.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Brócolis</h3>
+                    <p class="product-description">Brócolis fresco, unidade.</p>
+                    <p class="product-price">R$ 7,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Brócolis', 7.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(cb165135-5c2e-439a-9d18-deac86e168a1.jpg)">
+                </div>
+                <div class="product-info">
+                    <h3 class="product-name">Queijo Minas</h3>
+                    <p class="product-description">Queijo minas artesanal, kg.</p>
+                    <p class="product-price">R$ 32,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Queijo Minas', 32.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(cenoura.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Cenoura</h3>
+                    <p class="product-description">Cenoura orgânica, maço.</p>
+                    <p class="product-price">R$ 4,50</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Cenoura', 4.50)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(Chapéu\ De\ Palha.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Chapéu de Palha</h3>
+                    <p class="product-description">Chapéu artesanal de palha, unidade.</p>
+                    <p class="product-price">R$ 25,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Chapéu de Palha', 25.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(conserva.codorna.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Conserva de Codorna</h3>
+                    <p class="product-description">Conserva caseira de codorna, vidro.</p>
+                    <p class="product-price">R$ 18,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Conserva de Codorna', 18.00)">Comprar</button>
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(conserva.pepino.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Conserva de Pepino</h3>
+                    <p class="product-description">Pepinos em conserva caseira, vidro.</p>
+                    <p class="product-price">R$ 15,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Conserva Pepino', 15.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(couve.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Couve</h3>
+                    <p class="product-description">Couve orgânica, maço.</p>
+                    <p class="product-price">R$ 3,50</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Couve', 3.50)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(Couve-Flor.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Couve-Flor</h3>
+                    <p class="product-description">Couve-flor fresca, unidade.</p>
+                    <p class="product-price">R$ 9,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Couve-Flor', 9.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(Ecobag.cristã.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Ecobag Cristã</h3>
+                    <p class="product-description">Bolsa ecológica com estampa cristã.</p>
+                    <p class="product-price">R$ 38,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Ecobag Cristã', 38.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(espinafre.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Espinafre</h3>
+                    <p class="product-description">Espinafre fresco, maço.</p>
+                    <p class="product-price">R$ 5,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Espinafre', 5.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(galinha.limpa.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Galinha Caipira</h3>
+                    <p class="product-description">Galinha caipira limpa, unidade.</p>
+                    <p class="product-price">R$ 45,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Galinha Caipira', 45.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(Gargantilha.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Gargantilha</h3>
+                    <p class="product-description">Gargantilha artesanal, unidade.</p>
+                    <p class="product-price">R$ 28,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Gargantilha', 28.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(Geleia.de.laranja.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Geleia de Laranja</h3>
+                    <p class="product-description">Geleia caseira de laranja, vidro.</p>
+                    <p class="product-price">R$ 16,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Geleia de Laranja', 16.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(geléia.de.uva.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Geleia de Uva</h3>
+                    <p class="product-description">Geleia caseira de uva, vidro.</p>
+                    <p class="product-price">R$ 16,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Geleia de Uva', 16.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(geleia.pessego.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Geleia de Pêssego</h3>
+                    <p class="product-description">Geleia caseira de pêssego, vidro.</p>
+                    <p class="product-price">R$ 16,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Geleia de Pêssego', 16.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(geleia.pimenta.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Geleia de Pimenta</h3>
+                    <p class="product-description">Geleia caseira de pimenta, vidro.</p>
+                    <p class="product-price">R$ 18,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Geleia de Pimenta', 18.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(inhame.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Inhame</h3>
+                    <p class="product-description">Inhame orgânico, kg.</p>
+                    <p class="product-price">R$ 7,50</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Inhame', 7.50)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(kit.sabonete.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Kit Sabonetes</h3>
+                    <p class="product-description">Kit com 3 sabonetes artesanais.</p>
+                    <p class="product-price">R$ 22,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Kit Sabonetes', 22.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(leite.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Leite Fresco</h3>
+                    <p class="product-description">Leite fresco de vaca, litro.</p>
+                    <p class="product-price">R$ 6,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Leite Fresco', 6.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(mandioca.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Mandioca</h3>
+                    <p class="product-description">Mandioca fresca, kg.</p>
+                    <p class="product-price">R$ 5,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Mandioca', 5.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(masso.cheiro.verde.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Maço de Cheiro Verde</h3>
+                    <p class="product-description">Cheiro verde fresco, maço.</p>
+                    <p class="product-price">R$ 2,50</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Maço de Cheiro Verde', 2.50)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(mel.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Mel Orgânico</h3>
+                    <p class="product-description">Mel puro de abelhas, 250g.</p>
+                    <p class="product-price">R$ 25,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Mel Orgânico', 25.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(milho\ verde\ cozido.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Milho Verde Cozido</h3>
+                    <p class="product-description">Milho verde cozido, unidade.</p>
+                    <p class="product-price">R$ 4,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Milho Verde Cozido', 4.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(nabo.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Nabo</h3>
+                    <p class="product-description">Nabo fresco, kg.</p>
+                    <p class="product-price">R$ 6,50</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Nabo', 6.50)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(ovo.codorna.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Ovos de Codorna</h3>
+                    <p class="product-description">Dúzia de ovos de codorna frescos.</p>
+                    <p class="product-price">R$ 10,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Ovos de Codorna', 10.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(Pão.de.Queijo.Mineiro.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Pão de Queijo</h3>
+                    <p class="product-description">Pão de queijo mineiro, 10 unidades.</p>
+                    <p class="product-price">R$ 18,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Pão de Queijo', 18.00)">Comprar</button>
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(Rabanete.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Rabanete</h3>
+                    <p class="product-description">Rabanete fresco, maço.</p>
+                    <p class="product-price">R$ 4,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Rabanete', 4.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(rapadura.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Rapadura</h3>
+                    <p class="product-description">Rapadura artesanal, unidade.</p>
+                    <p class="product-price">R$ 8,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Rapadura', 8.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(repolho.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Repolho</h3>
+                    <p class="product-description">Repolho fresco, unidade.</p>
+                    <p class="product-price">R$ 7,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Repolho', 7.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(rúcula.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Rúcula</h3>
+                    <p class="product-description">Rúcula orgânica, maço.</p>
+                    <p class="product-price">R$ 4,50</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Rúcula', 4.50)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(sabnete.laranja.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Sabonete de Laranja</h3>
+                    <p class="product-description">Sabonete artesanal de laranja, unidade.</p>
+                    <p class="product-price">R$ 8,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Sabonete de Laranja', 8.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(vela.10dias.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Vela de 10 Dias</h3>
+                    <p class="product-description">Vela artesanal que dura 10 dias.</p>
+                    <p class="product-price">R$ 15,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Vela de 10 Dias', 15.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(macarraõ.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Macarrão Caseiro</h3>
+                    <p class="product-description">Macarrão artesanal, 500g.</p>
+                    <p class="product-price">R$ 12,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Macarrão Caseiro', 12.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(limão.bolo.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Bolo de Limão</h3>
+                    <p class="product-description">Bolo caseiro de limão, fatia.</p>
+                    <p class="product-price">R$ 7,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Bolo de Limão', 7.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(Biscoitos\ amanteigados\ simples.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Biscoitos Amanteigados</h3>
+                    <p class="product-description">Biscoitos caseiros, pacote.</p>
+                    <p class="product-price">R$ 10,00</p>
+                    <button class="buy-btn"
+                        onclick="adicionarAoCarrinho('Biscoitos Amanteigados', 10.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(Geleia\ de\ mexerica.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Geleia de Mexerica</h3>
+                    <p class="product-description">Geleia caseira de mexerica, vidro.</p>
+                    <p class="product-price">R$ 16,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Geleia de Mexerica', 16.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(Pepino.japones.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Pepino Japonês</h3>
+                    <p class="product-description">Pepino fresco, kg.</p>
+                    <p class="product-price">R$ 8,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Pepino Japonês', 8.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(melancia.baby.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Melancia Baby</h3>
+                    <p class="product-description">Melancia pequena e doce, unidade.</p>
+                    <p class="product-price">R$ 15,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Melancia Baby', 15.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(cesta.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Cesta de Bambu</h3>
+                    <p class="product-description">Cesta artesanal de bambu, média.</p>
+                    <p class="product-price">R$ 55,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Cesta de Bambu', 55.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(Compota.Ameixa_)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Compota de Ameixa</h3>
+                    <p class="product-description">Compota caseira sem conservantes.</p>
+                    <p class="product-price">R$ 18,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Compota de Ameixa', 18.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(vinagrete.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Vinagrete Caseiro</h3>
+                    <p class="product-description">Vinagrete pronto temperado, 300ml.</p>
+                    <p class="product-price">R$ 10,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Vinagrete Caseiro', 10.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(dedo.moça.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Pimenta Dedo-de-Moça</h3>
+                    <p class="product-description">Pimenta fresca, 100g.</p>
+                    <p class="product-price">R$ 6,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Pimenta Dedo-de-Moça', 6.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(manteiga.garrafa.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Manteiga de Garrafa</h3>
+                    <p class="product-description">Manteiga artesanal, 250g.</p>
+                    <p class="product-price">R$ 20,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Manteiga de Garrafa', 20.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(azeite.ervas.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Azeite com Ervas</h3>
+                    <p class="product-description">Azeite aromatizado, 200ml.</p>
+                    <p class="product-price">R$ 28,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Azeite com Ervas', 28.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(bolo.fuba.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Bolo de Fubá</h3>
+                    <p class="product-description">Bolo caseiro no pote, 500g.</p>
+                    <p class="product-price">R$ 22,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Bolo de Fubá', 22.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(panela.barro.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Panela de Barro</h3>
+                    <p class="product-description">Panela artesanal pequena.</p>
+                    <p class="product-price">R$ 65,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Panela de Barro', 65.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(garrafa..jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Licor de Caju</h3>
+                    <p class="product-description">Licor artesanal, 300ml.</p>
+                    <p class="product-price">R$ 45,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Licor de Caju', 45.00)">Comprar</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(melado.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Geleia de Marmelo</h3>
+                    <p class="product-description">Geleia caseira, vidro 250g.</p>
+                    <p class="product-price">R$ 17,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Geleia de Marmelo', 17.00)">Comprar</button>
+                </div>
+            </div>
+
+
+            <div class="product-card">
+                <div class="product-image" style="background-image: url(banana.passa.jpg)"></div>
+                <div class="product-info">
+                    <h3 class="product-name">Banana Passa</h3>
+                    <p class="product-description">Banana desidratada, 200g.</p>
+                    <p class="product-price">R$ 12,00</p>
+                    <button class="buy-btn" onclick="adicionarAoCarrinho('Banana Passa', 12.00)">Comprar</button>
+                </div>
+            </div>
+
+            <script>
+                function adicionarAoCarrinho(nome, preco) {
+                    const item = { nome, preco };
+                    let carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+                    carrinho.push(item);
+                    localStorage.setItem('carrinho', JSON.stringify(carrinho));
+                    mostrarMensagem(`${nome} foi adicionado ao carrinho!`);
+                }
+
+                function mostrarMensagem(texto) {
+                    
+                    const mensagem = document.createElement('div');
+                    mensagem.textContent = texto;
+
+                    
+                    mensagem.style.position = 'fixed';
+                    mensagem.style.top = '10px';
+                    mensagem.style.right = '10px';
+                    mensagem.style.backgroundColor = '#007bff';
+                    mensagem.style.color = 'white';
+                    mensagem.style.padding = '10px 20px';
+                    mensagem.style.borderRadius = '5px';
+                    mensagem.style.boxShadow = '0 0 10px rgba(0,0,0,0.2)';
+                    mensagem.style.zIndex = '10000';
+                    mensagem.style.fontFamily = 'Arial, sans-serif';
+
+                    document.body.appendChild(mensagem);
+
+                
+                    setTimeout(() => {
+                        mensagem.remove();
+                    }, 2000);
+                }
+            </script>
+
+           
+
+
+</body>
+
+</html>
